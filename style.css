@@ -4,9 +4,6 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: 62.5%;
-}
 @font-face {
   font-family: "JetBrainsMono";
   src: url(./assets/fonts/static/JetBrainsMono-Bold.ttf) format("truetype");
