@@ -1,29 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Password Generator App</title>
+  </head>
+  <body>
+    <section class="wrapper">
+      <header>
+        <h1>Password Generator</h1>
+      </header>
+      <section class="password-container">
+        <output class="password-display">
+          <span class="password-placeholder">P4$5W0rD!</span>
+        </output>
+        <div class="copy-section">
+          <span class="copy-status"></span>
+          <button class="copy-button">
+            <img src="./assets/images/icon-copy.svg" alt="Copy password" />
+          </button>
+        </div>
+      </section>
+      <form class="settings-form">
+        <div class="length-setting">
+          <div>
+            <p>Character Length</p>
+            <p class="length-count">0</p>
+          </div>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Password generator app</title>
-</head>
-<body>
-
-  Password Generator
-
-  P4$5W0rD!
-
-  Character Length
-
-  Include Uppercase Letters
-  Include Lowercase Letters
-  Include Numbers
-  Include Symbols
-
-  Strength
-
-  Generate
-
-</body>
+          <div>
+            <input
+              class="length-slider"
+              aria-label="Password length"
+              type="range"
+              min="1"
+              max="20"
+              value="10"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+        <fieldset class="include-settings">
+          <label>
+            <input type="checkbox" id="uppercase" value="uppercase" />
+            <span class="custom-checkbox"></span>
+            <p>Include Uppercase Letters</p>
+          </label>
+          <label>
+            <input type="checkbox" id="lowercase" value="lowercase" checked />
+            <span class="custom-checkbox"></span>
+            <p>Include Lowercase Letters</p>
+          </label>
+          <label>
+            <input type="checkbox" id="numbers" value="numbers" checked />
+            <span class="custom-checkbox"></span>
+            <p>Include Numbers</p>
+          </label>
+          <label>
+            <input type="checkbox" id="symbols" value="symbols" />
+            <span class="custom-checkbox"></span>
+            <p>Include Symbols</p>
+          </label>
+        </fieldset>
+        <fieldset class="strength-display">
+          <span class="strength-label">Strength</span>
+          <div class="strength-indicator">
+            <span class="strength-text"></span>
+            <div class="strength-bars">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+          </div>
+        </fieldset>
+        <button class="generate-button" type="submit">
+          <span>Generate</span>
+          <img
+            src="assets/images/icon-arrow-right.svg"
+            width="12"
+            height="12"
+          />
+        </button>
+      </form>
+    </section>
+    <script src="./script.js"></script>
+  </body>
 </html>

@@ -1,0 +1,377 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "JetBrainsMono";
+  height: 100vh;
+  background: linear-gradient(180deg, #14131b 0%, #08070b 100%);
+}
+
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url(./assets/fonts/static/JetBrainsMono-Bold.ttf) format("truetype");
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 54rem;
+  transform: scale(0.7);
+}
+
+header h1 {
+  font-size: 2.4rem;
+  text-align: center;
+  color: hsl(251, 9%, 53%);
+  margin-bottom: 3.2rem;
+}
+
+p {
+  font-size: 1.8rem;
+  color: hsl(252, 11%, 91%);
+}
+
+.password-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 8rem;
+  padding: 0 3.2rem;
+  margin-bottom: 2.4rem;
+  background-color: hsl(248, 10%, 15%);
+}
+
+.password-display {
+  font-size: 3.2rem;
+  color: hsl(252, 11%, 91%);
+}
+
+.password-placeholder {
+  font-size: 3.2rem;
+  color: hsl(252, 11%, 91%);
+  opacity: 0.25;
+}
+
+.copy-section {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.copy-status {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: hsl(127, 100%, 82%);
+}
+
+.copy-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.copy-button:hover img {
+  filter: contrast(3.5);
+}
+
+.settings-form {
+  padding: 2.4rem 3.2rem 3.2rem;
+  background-color: hsl(248, 10%, 15%);
+}
+
+.length-setting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  padding: 1em;
+  border: none;
+  color: #e6e5ea;
+  font-size: 2em;
+  width: 100%;
+}
+
+.length-setting > div:first-child {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.length-setting > div:last-of-type {
+  width: 100%;
+}
+
+.length-count {
+  font-size: 3.2rem;
+  color: hsl(127, 100%, 82%);
+}
+
+.length-slider {
+  -webkit-appearance: none;
+  margin-right: 15px;
+  width: 100%;
+  height: 7px;
+  margin-bottom: 3.6rem;
+  background: hsl(248, 15%, 11%);
+  background-image: linear-gradient(hsl(127, 100%, 82%), hsl(127, 100%, 82%));
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+.length-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 28px;
+  width: 28px;
+  border: 2px solid hsl(252, 11%, 91%);
+  border-radius: 50%;
+  background-color: hsl(252, 11%, 91%);
+  cursor: pointer;
+}
+
+.length-slider::-webkit-slider-thumb:hover {
+  border: 2px solid hsl(127, 100%, 82%);
+  background-color: hsl(248, 15%, 11%);
+}
+
+.length-slider::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+.length-slider::-moz-range-thumb {
+  -moz-appearance: none;
+  height: 28px;
+  width: 28px;
+  border: 2px solid hsl(252, 11%, 91%);
+  border-radius: 50%;
+  background-color: hsl(252, 11%, 91%);
+  cursor: pointer;
+}
+
+.length-slider::-moz-range-thumb:hover,
+.length-slider::-moz-range-thumb:active {
+  border: 2px solid hsl(127, 100%, 82%);
+  background-color: hsl(248, 15%, 11%);
+}
+
+.include-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3.4rem;
+  padding: 1em;
+  border: none;
+}
+
+label {
+  display: block;
+  padding-left: 4.4rem;
+  position: relative;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 2rem;
+  width: 2rem;
+  border: 2px solid hsl(252, 11%, 91%);
+  cursor: pointer;
+}
+
+.custom-checkbox::after {
+  display: none;
+  content: url("./assets/images/icon-check.svg");
+  position: absolute;
+  top: 3px;
+}
+
+.custom-checkbox:hover {
+  border-color: hsl(127, 100%, 82%);
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox {
+  border-color: hsl(127, 100%, 82%);
+  background-color: hsl(127, 100%, 82%);
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox::after {
+  display: block;
+}
+
+input[type="checkbox"]:focus ~ .custom-checkbox {
+  outline: 2px solid Highlight;
+  outline: 2px solid -webkit-focus-ring-color;
+}
+
+.strength-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: hsl(251, 9%, 53%);
+  margin-bottom: 3.2rem;
+  padding: 0 3.2rem;
+  height: 7.2rem;
+  background-color: hsl(248, 15%, 11%);
+}
+
+.strength-indicator {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.strength-text {
+  font-size: 2.4rem;
+  color: hsl(252, 11%, 91%);
+}
+
+.strength-bars {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.bar {
+  width: 1rem;
+  height: 2.8rem;
+  border: 2px solid hsl(252, 11%, 91%);
+  background: none;
+}
+
+.generate-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.2rem;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: hsl(247, 11%, 15%);
+  width: 100%;
+  padding: 1.9rem 0;
+  border: 2px solid hsl(127, 100%, 82%);
+  background-color: hsl(127, 100%, 82%);
+  cursor: pointer;
+}
+
+.generate-button:hover {
+  color: hsl(127, 100%, 82%);
+  background-color: hsl(247, 11%, 15%);
+}
+
+.generate-button:hover path {
+  fill: #a3ffae;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    transform: scale(0.9);
+  }
+
+  p {
+    font-size: 1.6rem;
+  }
+
+  .password-display,
+  .password-placeholder {
+    font-size: 2.4rem;
+  }
+
+  .password-container {
+    height: 64px;
+    margin-bottom: 1.6rem;
+  }
+
+  .length-count {
+    font-size: 2.8rem;
+  }
+
+  .strength-display {
+    height: 56px;
+  }
+}
+
+@media (max-width: 432px) {
+  .settings-form {
+    padding: 2.4rem 1.6rem 3.2rem;
+  }
+
+  .strength-text {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 375px) {
+    .wrapper {
+        transform: scale(1);
+    }
+  header h1 {
+    font-size: 1.6rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .settings-form {
+    padding: 1.6rem;
+    font-size: 0.8em;
+  }
+
+  .length-setting {
+    margin-bottom: 1.6rem;
+  }
+
+  .length-slider {
+    height: 8px;
+    margin-bottom: 4.2rem;
+  }
+
+  .length-count {
+    font-size: 2.4rem;
+  }
+
+  .include-settings {
+    gap: 1.6rem;
+    margin-bottom: 3.2rem;
+  }
+
+  .strength-display {
+    margin-bottom: 1.6rem;
+    padding: 0 1.6rem;
+  }
+
+  .strength-label {
+    font-size: 1.8rem;
+  }
+
+  .generate-button {
+    padding: 1.5rem 0;
+    font-size: 1.6rem;
+  }
+}
